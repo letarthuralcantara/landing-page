@@ -1,4 +1,3 @@
-import './style.css';
 
 const github = 'https://github.com/letarthuralcantara';
 const linkedin = 'https://www.linkedin.com/in/arthur-alc%C3%A2ntara-3626a0267/';

@@ -24,3 +24,11 @@ html,body,#app,main{max-width:100%;overflow-x:hidden}
 
 /* Full-bleed dark D.A.F.E. section */
 .section-dark.page-width{width:100%;max-width:none;margin-left:0;margin-right:0}
+
+/* Painel de laboratório com imagem grande */
+.network-panel.lab-panel{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:40px;align-items:start;padding:40px 0}
+.network-panel.lab-panel[hidden],.network-panel.lab-panel.is-hidden{display:none}
+.lab-figure{min-width:0}
+.lab-figure img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.lab-figure .download-link{display:inline-block;margin-top:12px}
+@media(max-width:900px){.network-panel.lab-panel{grid-template-columns:1fr}}

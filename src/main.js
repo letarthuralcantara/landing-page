@@ -1,4 +1,4 @@
-import './styles.css';
+import './style.css';
 
 const github = 'https://github.com/letarthuralcantara';
 const linkedin = 'https://www.linkedin.com/in/arthur-alc%C3%A2ntara-3626a0267/';
@@ -24,14 +24,19 @@ app.innerHTML = `
       <div class="section-intro"><div><h2>Laboratórios de redes</h2><p>Práticas no Cisco Packet Tracer. Selecione um laboratório para ver a topologia e a configuração.</p></div></div>
       <div class="network-workbench">
         <div class="network-tabs" role="tablist" aria-label="Laboratórios de redes"><button class="network-tab is-selected" id="tab-vlan" role="tab" aria-selected="true" aria-controls="panel-vlan" data-lab="vlan">VLAN, DHCP e STP</button><button class="network-tab" id="tab-eigrp" role="tab" aria-selected="false" aria-controls="panel-eigrp" data-lab="eigrp">EIGRP com switches L3</button><button class="network-tab" id="tab-ospf" role="tab" aria-selected="false" aria-controls="panel-ospf" data-lab="ospf">OSPF com MD5 e SSH</button></div>
-        <div class="network-panel" id="panel-vlan" role="tabpanel" aria-labelledby="tab-vlan">
-          <div class="network-copy"><h3>VLAN, DHCP e STP</h3><p>Segmentação da rede, distribuição de endereços e prevenção de loops.</p><ul><li>Configuração de VLANs</li><li>DHCP</li><li>Spanning Tree Protocol</li></ul></div><div class="topology-area"><svg class="topology-svg" viewBox="0 0 520 190" role="img" aria-label="Topologia com roteador, switch e computadores"><path d="M94 78H226M294 78H426M260 96V145M168 96V145M352 96V145"/><rect x="48" y="52" width="92" height="50" rx="4"/><text x="94" y="82">Roteador</text><rect x="226" y="52" width="68" height="50" rx="4"/><text x="260" y="82">Switch</text><rect x="426" y="52" width="46" height="50" rx="4"/><text x="449" y="82">DHCP</text><circle cx="168" cy="158" r="20"/><text x="168" y="162">PC 1</text><circle cx="260" cy="158" r="20"/><text x="260" y="162">PC 2</text><circle cx="352" cy="158" r="20"/><text x="352" y="162">PC 3</text></svg><div class="network-media"><div class="image-slot"><img src="/rede-vlan.png" alt="Print real da topologia VLAN, DHCP e STP" hidden onload="this.hidden=false;this.nextElementSibling.hidden=true" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="image-placeholder">Adicione <strong>rede-vlan.png</strong> na pasta <strong>public/</strong></span></div><a class="download-link" href="/rede-vlan.png" download>Baixar imagem</a></div></div>
+
+        <div class="network-panel lab-panel" id="panel-vlan" role="tabpanel" aria-labelledby="tab-vlan">
+          <div class="network-copy"><h3>VLAN, DHCP e STP</h3><p>Segmentação da rede, distribuição de endereços e prevenção de loops.</p><ul><li>VLANs 10 e 20, em três switches 2960</li><li>DHCP configurado no roteador ISR4331</li><li>STP: SW2 é a raiz da VLAN 10 e SW3 é a raiz da VLAN 20</li></ul></div>
+          <div class="lab-figure"><a href="/redes-stp.png" target="_blank" rel="noreferrer"><img src="/redes-stp.png" alt="Topologia do laboratório de VLAN, DHCP e STP no Packet Tracer, com a prova do STP no SW2 e testes de ping" /></a><a class="download-link" href="./public/stp arthur alcantara.pkt" download>Baixar arquivo pkt</a></div>
         </div>
-        <div class="network-panel is-hidden" id="panel-eigrp" role="tabpanel" aria-labelledby="tab-eigrp" hidden>
-          <div class="network-copy"><h3>EIGRP com switches L3</h3><p>Roteamento dinâmico entre switches de camada 3.</p><ul><li>Roteamento EIGRP</li><li>Switches de camada 3</li><li>Comunicação entre redes</li></ul></div><div class="topology-area"><svg class="topology-svg" viewBox="0 0 520 190" role="img" aria-label="Topologia com dois switches de camada 3 e computadores"><path d="M104 82H216M304 82H416M260 105V146M110 105V146M410 105V146"/><rect x="48" y="57" width="112" height="50" rx="4"/><text x="104" y="87">Switch L3</text><rect x="216" y="57" width="88" height="50" rx="4"/><text x="260" y="87">EIGRP</text><rect x="360" y="57" width="112" height="50" rx="4"/><text x="416" y="87">Switch L3</text><circle cx="110" cy="160" r="20"/><text x="110" y="164">A</text><circle cx="260" cy="160" r="20"/><text x="260" y="164">B</text><circle cx="410" cy="160" r="20"/><text x="410" y="164">C</text></svg><div class="network-media"><div class="image-slot"><img src="/rede-eigrp.png" alt="Print real da topologia EIGRP" hidden onload="this.hidden=false;this.nextElementSibling.hidden=true" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="image-placeholder">Adicione <strong>rede-eigrp.png</strong> na pasta <strong>public/</strong></span></div><a class="download-link" href="/rede-eigrp.png" download>Baixar imagem</a></div></div>
+
+        <div class="network-panel lab-panel is-hidden" id="panel-eigrp" role="tabpanel" aria-labelledby="tab-eigrp" hidden>
+          <div class="network-copy"><h3>EIGRP com switches L3</h3><p>Roteamento dinâmico entre dois switches de camada 3.</p><ul><li>EIGRP no AS 100 entre dois switches 3560</li><li>Vizinhança formada pelo link 10.0.0.0/30</li><li>Rotas das VLANs aprendidas pelo outro switch</li></ul></div>
+          <div class="lab-figure"><a href="/redes-eigrp.png" target="_blank" rel="noreferrer"><img src="/redes-eigrp.png" alt="Topologia do laboratório de EIGRP no Packet Tracer, com a tabela de vizinhos, as rotas aprendidas e o teste de ping" /></a><a class="download-link" href="./public/eigrp arthur alcantara.pkt" download>Baixar arquivo pkt</a></div>
         </div>
-        <div class="network-panel is-hidden" id="panel-ospf" role="tabpanel" aria-labelledby="tab-ospf" hidden>
-          <div class="network-copy"><h3>OSPF com MD5 e SSH</h3><p>Roteamento OSPF com autenticação e acesso administrativo seguro.</p><ul><li>Roteamento OSPF</li><li>Autenticação MD5</li><li>Acesso por SSH</li></ul></div><div class="topology-area"><svg class="topology-svg" viewBox="0 0 520 190" role="img" aria-label="Topologia com dois roteadores e autenticação"><path d="M112 80H408M260 105V145"/><rect x="52" y="55" width="120" height="50" rx="4"/><text x="112" y="85">Roteador 1</text><rect x="348" y="55" width="120" height="50" rx="4"/><text x="408" y="85">Roteador 2</text><circle cx="260" cy="82" r="28"/><text x="260" y="78">MD5</text><text x="260" y="91">SSH</text><circle cx="260" cy="160" r="20"/><text x="260" y="164">LAN</text></svg><div class="network-media"><div class="image-slot"><img src="/rede-ospf.png" alt="Print real da topologia OSPF" hidden onload="this.hidden=false;this.nextElementSibling.hidden=true" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="image-placeholder">Adicione <strong>rede-ospf.png</strong> na pasta <strong>public/</strong></span></div><a class="download-link" href="/rede-ospf.png" download>Baixar imagem</a></div></div>
+                <div class="network-panel lab-panel is-hidden" id="panel-ospf" role="tabpanel" aria-labelledby="tab-ospf" hidden>
+          <div class="network-copy"><h3>OSPF com autenticação MD5</h3><p>Roteamento OSPF com autenticação entre os vizinhos.</p><ul><li>OSPF área 0 entre três roteadores 2911</li><li>Autenticação MD5 em cada link</li><li>Rotas aprendidas e ping entre as duas redes</li></ul></div>
+          <div class="lab-figure"><a href="/redes-ospf.png" target="_blank" rel="noreferrer"><img src="/redes-ospf.png" alt="Topologia do laboratório de OSPF no Packet Tracer, com os vizinhos em FULL, as rotas aprendidas e o teste de ping" /></a><a class="download-link" href="./public/ospf arthur alcantara.pkt" download>Baixar arquivo pkt</a></div>
         </div>
       </div>
     </section>
@@ -42,10 +47,13 @@ app.innerHTML = `
     </section>
 
     <section id="backstage" class="section page-width backstage-section"><div class="section-intro"><div><h2>Backstage Cena</h2><p>O repositório está disponível no GitHub.</p></div></div><div class="backstage-content"><p>Plataforma web para músicos independentes se encontrarem por perfil, instrumento, gênero ou DAW. Reúne feed, clubes com chat e Work Ons para organizar projetos com faixas, tarefas, capas e membros.</p><p>O projeto inclui cadastro em etapas, login com JWT, recuperação de senha, privacidade de perfil, upload de imagens e áudio, integração com Spotify e Last.fm e testes unitários, de API, front-end e ponta a ponta.</p><div class="stack"><span>Node.js</span><span>Express</span><span>TypeScript</span><span>SQLite</span><span>Prisma</span><span>JWT</span><span>Argon2</span><span>Zod</span><span>Multer</span><span>Vitest</span><span>Supertest</span><span>Playwright</span></div><a class="repo-link" href="${backstage}" target="_blank" rel="noreferrer">Abrir repositório</a></div></section>
+    
+    <section id="contato" class="contact page-width"><h2>Contato</h2><div class="contact-links"><a href="${github}" target="_blank" rel="noreferrer">GitHub</a><a href="${linkedin}" target="_blank" rel="noreferrer">LinkedIn</a></div><a href="${linkedin}" target="_blank" rel="noreferrer">arthuralcantara.dmf@gmail.com</a></div></section>
+  
+  
+    </main>
 
-    <section id="contato" class="contact page-width"><h2>Contato</h2><div class="contact-links"><a href="${github}" target="_blank" rel="noreferrer">GitHub</a><a href="${linkedin}" target="_blank" rel="noreferrer">LinkedIn</a></div></section>
-  </main>
-`;
+  `;
 
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');

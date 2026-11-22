@@ -31,11 +31,11 @@ app.innerHTML = `
 
         <div class="network-panel lab-panel is-hidden" id="panel-eigrp" role="tabpanel" aria-labelledby="tab-eigrp" hidden>
           <div class="network-copy"><h3>EIGRP com switches L3</h3><p>Roteamento dinâmico entre dois switches de camada 3.</p><ul><li>EIGRP no AS 100 entre dois switches 3560</li><li>Vizinhança formada pelo link 10.0.0.0/30</li><li>Rotas das VLANs aprendidas pelo outro switch</li></ul></div>
-          <div class="lab-figure"><a href="/redes-eigrp.png" target="_blank" rel="noreferrer"><img src="./redes-eigrp.png" alt="Topologia do laboratório de EIGRP no Packet Tracer, com a tabela de vizinhos, as rotas aprendidas e o teste de ping" /></a><a class="download-link" href="./public/eigrp arthur alcantara.pkt" download>Baixar arquivo pkt</a></div>
+          <div class="lab-figure"><a href="./redes-eigrp.png" target="_blank" rel="noreferrer"><img src="./redes-eigrp.png" alt="Topologia do laboratório de EIGRP no Packet Tracer, com a tabela de vizinhos, as rotas aprendidas e o teste de ping" /></a><a class="download-link" href="./public/eigrp arthur alcantara.pkt" download>Baixar arquivo pkt</a></div>
         </div>
                 <div class="network-panel lab-panel is-hidden" id="panel-ospf" role="tabpanel" aria-labelledby="tab-ospf" hidden>
           <div class="network-copy"><h3>OSPF com autenticação MD5</h3><p>Roteamento OSPF com autenticação entre os vizinhos.</p><ul><li>OSPF área 0 entre três roteadores 2911</li><li>Autenticação MD5 em cada link</li><li>Rotas aprendidas e ping entre as duas redes</li></ul></div>
-          <div class="lab-figure"><a href="/redes-ospf.png" target="_blank" rel="noreferrer"><img src="./redes-ospf.png" alt="Topologia do laboratório de OSPF no Packet Tracer, com os vizinhos em FULL, as rotas aprendidas e o teste de ping" /></a><a class="download-link" href="./public/ospf arthur alcantara.pkt" download>Baixar arquivo pkt</a></div>
+          <div class="lab-figure"><a href="./redes-ospf.png" target="_blank" rel="noreferrer"><img src="./redes-ospf.png" alt="Topologia do laboratório de OSPF no Packet Tracer, com os vizinhos em FULL, as rotas aprendidas e o teste de ping" /></a><a class="download-link" href="./public/ospf arthur alcantara.pkt" download>Baixar arquivo pkt</a></div>
         </div>
       </div>
     </section>
